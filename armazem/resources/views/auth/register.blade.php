@@ -19,6 +19,27 @@
                 <x-input id="name" class="block mt-1 w-full" type="text" name="name" :value="old('name')" required autofocus />
             </div>
 
+             <!-- cpf -->
+            <div class="mt-4">
+                <x-label for="cpf" :value="__('Cpf')" />
+
+                <x-input id="cpf" class="block mt-1 w-full" type="text" name="cpf" :value="old('cpf')" required />
+            </div>
+
+             <!-- data de nascimento -->
+            <div class="mt-4">
+                <x-label for="data_de_nascimento" :value="__('data de nascimento')" />
+
+                <x-input id="data_de_nascimento" class="block mt-1 w-full" type="text" name="data_de_nascimento" :value="old('data_de_nascimento')" required />
+            </div>
+
+             <!-- tipo  -->
+            <div class="mt-4">
+               
+
+                <x-input id="tipo" class="block mt-1 w-full" type="hidden" name="tipo" :value="'cliente'"/>
+            </div>
+
             <!-- Email Address -->
             <div class="mt-4">
                 <x-label for="email" :value="__('Email')" />
