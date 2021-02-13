@@ -21,6 +21,7 @@
     </b>   
 @php
 $produtos=App\Models\Produto::where('tipo','produto')->get();
+$clientes=App\Models\User::where('tipo','cliente')->get();
 @endphp
 
 <table>
@@ -43,6 +44,30 @@ $produtos=App\Models\Produto::where('tipo','produto')->get();
     @endforeach
     </tbody>
 </table>
+<b>
+<h1>Todos os clientes</h1>
+</b>
+<table>
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Cpf</th>
+            <th>Data de nascimento</th>
+        </tr>   
+     </thead>
+    <tbody>
+        @foreach ($clientes as $cliente)
+        <tr>
+            <td>{{$cliente->name}}</td>
+            <td>{{$cliente->cpf}}</td>
+            <td>{{$cliente->data_de_nascimento}}</td>
+        </tr>
+    @endforeach
+    </tbody>
+</table>
+
+
+
     <div class="py-12">
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
             <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg">
