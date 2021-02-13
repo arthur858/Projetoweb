@@ -31,6 +31,7 @@ $clientes=App\Models\User::where('tipo','cliente')->get();
             <th>Name</th>
             <th>Marca</th>
             <th>Data de validade</th>
+            <th>Oções</th>
         </tr>   
      </thead>
     <tbody>
@@ -40,6 +41,7 @@ $clientes=App\Models\User::where('tipo','cliente')->get();
             <td>{{$produto->name}}</td>
             <td>{{$produto->marca}}</td>
             <td>{{$produto->data_de_validade}}</td>
+            <td><a class="bg-red-200 rounded hover:bg-red-300" href="{{ route('rm-produto', $produto)}}">Excluir</a></td>
         </tr>
     @endforeach
     </tbody>

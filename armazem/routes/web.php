@@ -21,6 +21,7 @@ Route::get('/dashboard', function () {
     return view('dashboard');
 })->middleware(['auth'])->name('dashboard');
 
+Route::get('/dashboard/delete/{produto}',[ProdutoController::class, 'destroy'])->name('rm-produto');
 
 Route::post('/produto',[ProdutoController::class, 'store'])->name('add-produto');
 require __DIR__.'/auth.php';
