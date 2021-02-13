@@ -14,6 +14,7 @@ class Produto extends Model
         'name',
         'marca',
         'data_de_validade',
+        'tipo',
     ];
 
     public function users(){

@@ -35,7 +35,24 @@ class ProdutoController extends Controller
      */
     public function store(Request $request)
     {
-        //
+         $request->validate([
+            'codigo' => 'required',
+            'name' => 'required',
+            'marca' => 'required',
+            'data_de_validade'=>'required',
+            'tipo' => 'required',
+
+        ]);
+         Produto::create([
+            'codigo' => $request->codigo,
+            'name' => $request->name,
+            'marca' => $request->marca,
+            'data_de_validade' => $request->data_de_validade,
+            'tipo' => $request->tipo,
+         ]);
+
+         return redirect('/dashboard');
+        
     }
 
     /**
